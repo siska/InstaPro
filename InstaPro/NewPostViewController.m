@@ -7,6 +7,7 @@
 //
 
 #import "NewPostViewController.h"
+#import <Parse/Parse.h>
 
 @interface NewPostViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
@@ -21,7 +22,7 @@
 {
     [super viewDidLoad];
 
-    
+
 }
 
 #pragma mark - Manage Photo Selection
@@ -40,9 +41,24 @@
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
+#pragma mark - Save selected photo to Parse
 - (IBAction)onSaveButtonPressed:(id)sender
 {
+    PFObject *newPost = [PFObject objectWithClassName:@"Post"];
 
+    newPost[@"photoData"] = [PFFile fileWithData:UIImagePNGRepresentation(self.imageView.image)];
+    newPost[@"caption"] = self.captionTextField.text;
+
+    [newPost saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error)
+        {
+            NSLog(@"Error: %@", [error userInfo]);
+        }
+//        else
+//        {
+//            [self refreshDisplay];
+//        }
+    }];
 }
 
 @end
