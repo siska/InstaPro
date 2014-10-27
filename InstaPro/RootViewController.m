@@ -9,9 +9,13 @@
 #import "RootViewController.h"
 
 @interface RootViewController ()
+<<<<<<< HEAD
 @property (weak, nonatomic) IBOutlet UISegmentedControl *loginSignUpToggle;
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
+=======
+@property NSArray *testingArray;
+>>>>>>> e7913c424863dc63b8412f56f8388d59ac372521
 
 @end
 
@@ -23,10 +27,14 @@
 
 }
 
+<<<<<<< HEAD
 - (IBAction)onLoginButtonPressed:(id)sender
 {
     
 }
+=======
+
+>>>>>>> e7913c424863dc63b8412f56f8388d59ac372521
 
 
 @end
