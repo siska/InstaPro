@@ -10,11 +10,18 @@
 
 
 @interface RootViewController ()
+<<<<<<< HEAD
 @property (weak, nonatomic) IBOutlet UISegmentedControl *loginSignUpToggle;
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
+<<<<<<< HEAD
 @property (weak, nonatomic) IBOutlet UITextField *verifyPassword;
 @property (weak, nonatomic) IBOutlet UILabel *instructionLabel;
+=======
+=======
+@property NSArray *testingArray;
+>>>>>>> e7913c424863dc63b8412f56f8388d59ac372521
+>>>>>>> origin
 
 @end
 
@@ -39,6 +46,7 @@
     }
 }
 
+<<<<<<< HEAD
 - (IBAction)onLoginButtonPressed:(id)sender
 {
     if (self.loginSignUpToggle.selectedSegmentIndex == 0)
@@ -58,6 +66,9 @@
     }
 
 }
+=======
+
+>>>>>>> e7913c424863dc63b8412f56f8388d59ac372521
 
 
 @end
