@@ -9,13 +9,39 @@
 #import "NewPostViewController.h"
 
 @interface NewPostViewController ()
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UIButton *addPhotoButton;
+@property (strong, nonatomic) IBOutlet UITextField *captionTextField;
 
 @end
 
 @implementation NewPostViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+
+    
+}
+
+#pragma mark - Manage Photo Selection
+- (IBAction)onAddPhotoButtonPressed:(id)sender
+{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *selectedImage = info[UIImagePickerControllerEditedImage];
+    self.imageView.image = selectedImage;
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (IBAction)onSaveButtonPressed:(id)sender
+{
 
 }
 
