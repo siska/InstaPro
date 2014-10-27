@@ -10,7 +10,7 @@
 		1241398319FED7B100E26B60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241398219FED7B100E26B60 /* main.m */; };
 		1241398619FED7B100E26B60 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241398519FED7B100E26B60 /* AppDelegate.m */; };
 		1241398919FED7B100E26B60 /* InstaPro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1241398719FED7B100E26B60 /* InstaPro.xcdatamodeld */; };
-		1241398C19FED7B100E26B60 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241398B19FED7B100E26B60 /* ViewController.m */; };
+		1241398C19FED7B100E26B60 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241398B19FED7B100E26B60 /* RootViewController.m */; };
 		1241398F19FED7B100E26B60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1241398D19FED7B100E26B60 /* Main.storyboard */; };
 		1241399119FED7B100E26B60 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1241399019FED7B100E26B60 /* Images.xcassets */; };
 		1241399419FED7B100E26B60 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1241399219FED7B100E26B60 /* LaunchScreen.xib */; };
@@ -34,8 +34,8 @@
 		1241398419FED7B100E26B60 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1241398519FED7B100E26B60 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1241398819FED7B100E26B60 /* InstaPro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InstaPro.xcdatamodel; sourceTree = "<group>"; };
-		1241398A19FED7B100E26B60 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1241398B19FED7B100E26B60 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1241398A19FED7B100E26B60 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		1241398B19FED7B100E26B60 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		1241398E19FED7B100E26B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1241399019FED7B100E26B60 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1241399319FED7B100E26B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -85,8 +85,8 @@
 			children = (
 				1241398419FED7B100E26B60 /* AppDelegate.h */,
 				1241398519FED7B100E26B60 /* AppDelegate.m */,
-				1241398A19FED7B100E26B60 /* ViewController.h */,
-				1241398B19FED7B100E26B60 /* ViewController.m */,
+				1241398A19FED7B100E26B60 /* RootViewController.h */,
+				1241398B19FED7B100E26B60 /* RootViewController.m */,
 				1241398D19FED7B100E26B60 /* Main.storyboard */,
 				1241399019FED7B100E26B60 /* Images.xcassets */,
 				1241399219FED7B100E26B60 /* LaunchScreen.xib */,
@@ -224,7 +224,7 @@
 			files = (
 				1241398619FED7B100E26B60 /* AppDelegate.m in Sources */,
 				1241398319FED7B100E26B60 /* main.m in Sources */,
-				1241398C19FED7B100E26B60 /* ViewController.m in Sources */,
+				1241398C19FED7B100E26B60 /* RootViewController.m in Sources */,
 				1241398919FED7B100E26B60 /* InstaPro.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

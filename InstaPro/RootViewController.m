@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Ryan Siska. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "RootViewController.h"
 
-@interface ViewController ()
+@interface RootViewController ()
 
 @end
 
-@implementation ViewController
+@implementation RootViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
