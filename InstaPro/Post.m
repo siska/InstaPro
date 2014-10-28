@@ -7,7 +7,6 @@
 //
 
 #import "Post.h"
-#import <Parse/Parse.h>
 
 @implementation Post
 @dynamic caption;
@@ -22,5 +21,4 @@
 {
     return @"Post";
 }
-
 @end
