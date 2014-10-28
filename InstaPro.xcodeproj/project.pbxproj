@@ -29,6 +29,12 @@
 		124139C119FEF5E200E26B60 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 124139B619FEF5E200E26B60 /* Social.framework */; };
 		124139C219FEF5E200E26B60 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 124139B719FEF5E200E26B60 /* SystemConfiguration.framework */; };
 		124139C419FEF5EB00E26B60 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 124139C319FEF5EB00E26B60 /* libz.dylib */; };
+<<<<<<< HEAD
+		124139C719FEFC1900E26B60 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 124139C619FEFC1900E26B60 /* ProfileViewController.m */; };
+		124139CA19FF277A00E26B60 /* ProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 124139C919FF277A00E26B60 /* ProfileCollectionViewCell.m */; };
+=======
+		4CEEB5E619FEF9BB00D35D4C /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEB5E519FEF9BB00D35D4C /* NewPostViewController.m */; };
+>>>>>>> 8722ed5037822c13bfa0ae3b6d0833fa133ab3ef
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +76,15 @@
 		124139B619FEF5E200E26B60 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		124139B719FEF5E200E26B60 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		124139C319FEF5EB00E26B60 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+<<<<<<< HEAD
+		124139C519FEFC1900E26B60 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		124139C619FEFC1900E26B60 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		124139C819FF277A00E26B60 /* ProfileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionViewCell.h; sourceTree = "<group>"; };
+		124139C919FF277A00E26B60 /* ProfileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionViewCell.m; sourceTree = "<group>"; };
+=======
+		4CEEB5E419FEF9BB00D35D4C /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
+		4CEEB5E519FEF9BB00D35D4C /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
+>>>>>>> 8722ed5037822c13bfa0ae3b6d0833fa133ab3ef
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +145,15 @@
 				1241398D19FED7B100E26B60 /* Main.storyboard */,
 				1241398A19FED7B100E26B60 /* RootViewController.h */,
 				1241398B19FED7B100E26B60 /* RootViewController.m */,
+<<<<<<< HEAD
+				124139C519FEFC1900E26B60 /* ProfileViewController.h */,
+				124139C619FEFC1900E26B60 /* ProfileViewController.m */,
+				124139C819FF277A00E26B60 /* ProfileCollectionViewCell.h */,
+				124139C919FF277A00E26B60 /* ProfileCollectionViewCell.m */,
+=======
+				4CEEB5E419FEF9BB00D35D4C /* NewPostViewController.h */,
+				4CEEB5E519FEF9BB00D35D4C /* NewPostViewController.m */,
+>>>>>>> 8722ed5037822c13bfa0ae3b6d0833fa133ab3ef
 				1241399019FED7B100E26B60 /* Images.xcassets */,
 				1241399219FED7B100E26B60 /* LaunchScreen.xib */,
 				1241398719FED7B100E26B60 /* InstaPro.xcdatamodeld */,
@@ -279,9 +303,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1241398619FED7B100E26B60 /* AppDelegate.m in Sources */,
+				4CEEB5E619FEF9BB00D35D4C /* NewPostViewController.m in Sources */,
 				1241398319FED7B100E26B60 /* main.m in Sources */,
 				1241398C19FED7B100E26B60 /* RootViewController.m in Sources */,
 				1241398919FED7B100E26B60 /* InstaPro.xcdatamodeld in Sources */,
+				124139CA19FF277A00E26B60 /* ProfileCollectionViewCell.m in Sources */,
+				124139C719FEFC1900E26B60 /* ProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +507,7 @@
 				124139A519FED7B100E26B60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		124139A619FED7B100E26B60 /* Build configuration list for PBXNativeTarget "InstaProTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +516,7 @@
 				124139A819FED7B100E26B60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
