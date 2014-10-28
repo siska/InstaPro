@@ -54,10 +54,6 @@
         {
             NSLog(@"Error: %@", [error userInfo]);
         }
-//        else
-//        {
-//            [self refreshDisplay];
-//        }
     }];
 }
 
