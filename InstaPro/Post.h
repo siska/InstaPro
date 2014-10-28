@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import "User.h"
 
 @interface Post : PFObject <PFSubclassing>
 @property NSString *caption;
 @property PFFile *photoData;
+@property User *user;
 
 @end

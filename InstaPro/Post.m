@@ -11,6 +11,7 @@
 @implementation Post
 @dynamic caption;
 @dynamic photoData;
+@dynamic user;
 
 +(void)load
 {
