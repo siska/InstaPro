@@ -31,6 +31,8 @@
 		124139C719FEFC1900E26B60 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 124139C619FEFC1900E26B60 /* ProfileViewController.m */; };
 		124139CA19FF277A00E26B60 /* ProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 124139C919FF277A00E26B60 /* ProfileCollectionViewCell.m */; };
 		1290D50F1A002B3800CDCCEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1290D50E1A002B3800CDCCEE /* Main.storyboard */; };
+		4C1960131A00314F00E1F327 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1960121A00314F00E1F327 /* Post.m */; };
+		4C1960161A00345000E1F327 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1960151A00345000E1F327 /* User.m */; };
 		4CEEB5E619FEF9BB00D35D4C /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEB5E519FEF9BB00D35D4C /* NewPostViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,10 @@
 		124139C819FF277A00E26B60 /* ProfileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionViewCell.h; sourceTree = "<group>"; };
 		124139C919FF277A00E26B60 /* ProfileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionViewCell.m; sourceTree = "<group>"; };
 		1290D50E1A002B3800CDCCEE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
+		4C1960111A00314F00E1F327 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		4C1960121A00314F00E1F327 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		4C1960141A00345000E1F327 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		4C1960151A00345000E1F327 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		4CEEB5E419FEF9BB00D35D4C /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
 		4CEEB5E519FEF9BB00D35D4C /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +154,7 @@
 				1241399019FED7B100E26B60 /* Images.xcassets */,
 				1241399219FED7B100E26B60 /* LaunchScreen.xib */,
 				1241398719FED7B100E26B60 /* InstaPro.xcdatamodeld */,
+				4C1960181A00347700E1F327 /* Data Model */,
 				1241398019FED7B100E26B60 /* Supporting Files */,
 			);
 			path = InstaPro;
@@ -191,6 +198,17 @@
 				1241399E19FED7B100E26B60 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C1960181A00347700E1F327 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				4C1960111A00314F00E1F327 /* Post.h */,
+				4C1960121A00314F00E1F327 /* Post.m */,
+				4C1960141A00345000E1F327 /* User.h */,
+				4C1960151A00345000E1F327 /* User.m */,
+			);
+			name = "Data Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,11 +313,13 @@
 			files = (
 				1241398619FED7B100E26B60 /* AppDelegate.m in Sources */,
 				4CEEB5E619FEF9BB00D35D4C /* NewPostViewController.m in Sources */,
+				4C1960161A00345000E1F327 /* User.m in Sources */,
 				1241398319FED7B100E26B60 /* main.m in Sources */,
 				1241398C19FED7B100E26B60 /* RootViewController.m in Sources */,
 				1241398919FED7B100E26B60 /* InstaPro.xcdatamodeld in Sources */,
 				124139CA19FF277A00E26B60 /* ProfileCollectionViewCell.m in Sources */,
 				124139C719FEFC1900E26B60 /* ProfileViewController.m in Sources */,
+				4C1960131A00314F00E1F327 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
