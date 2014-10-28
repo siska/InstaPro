@@ -11,7 +11,7 @@
 
 @interface NewPostViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
-@property (strong, nonatomic) IBOutlet UIButton *addPhotoButton;
+@property (strong, nonatomic) IBOutlet UIButton *addPhotoFromCameraRollButton;
 @property (strong, nonatomic) IBOutlet UITextField *captionTextField;
 
 @end
@@ -26,7 +26,7 @@
 }
 
 #pragma mark - Manage Photo Selection
-- (IBAction)onAddPhotoButtonPressed:(id)sender
+- (IBAction)onAddPhotoFromCameraRollButtonPressed:(id)sender
 {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
@@ -35,7 +35,7 @@
     [self presentViewController:picker animated:YES completion:NULL];
 }
 
-- (IBAction)onCameraButtonPressed:(id)sender
+- (IBAction)onAddPhotoFromCameraButtonPressed:(id)sender
 {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;

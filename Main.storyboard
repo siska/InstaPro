@@ -67,7 +67,7 @@
         <!--Camera-->
         <scene sceneID="tFn-hx-pMY">
             <objects>
-                <viewController id="n0D-Ku-Smv" sceneMemberID="viewController">
+                <viewController id="n0D-Ku-Smv" customClass="NewPostViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nKp-t3-QYE"/>
                         <viewControllerLayoutGuide type="bottom" id="B9R-dZ-m9T"/>
@@ -75,10 +75,97 @@
                     <view key="view" contentMode="scaleToFill" id="Fo1-Fb-euY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gty-Jx-iVX">
+                                <rect key="frame" x="150" y="28" width="300" height="300"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Xes-E5-7aQ"/>
+                                    <constraint firstAttribute="height" constant="300" id="dHw-yw-896"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBL-xx-gej">
+                                <rect key="frame" x="150" y="336" width="61" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="k9f-fq-V7k"/>
+                                    <constraint firstAttribute="width" constant="61" id="oA2-Ef-7as"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfN-ZO-HE0">
+                                <rect key="frame" x="416" y="389" width="34" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="MiT-3C-UsR"/>
+                                    <constraint firstAttribute="width" constant="34" id="Qlf-tx-W8J"/>
+                                </constraints>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSaveButtonPressed:" destination="n0D-Ku-Smv" eventType="touchUpInside" id="fLY-fj-4g2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBx-Td-0li">
+                                <rect key="frame" x="385" y="299" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="JCx-2b-1Qn"/>
+                                    <constraint firstAttribute="height" constant="24" id="KNk-dv-z18"/>
+                                </constraints>
+                                <state key="normal" image="imageFromCamera">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onAddPhotoFromCameraButtonPressed:" destination="n0D-Ku-Smv" eventType="touchUpInside" id="Dfu-0G-U6z"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HMj-YJ-vYD">
+                                <rect key="frame" x="150" y="358" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="8nP-81-inK"/>
+                                    <constraint firstAttribute="height" constant="30" id="wfq-jZ-TcL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJF-Yt-IPv">
+                                <rect key="frame" x="421" y="299" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="6Mo-0D-H2d"/>
+                                    <constraint firstAttribute="width" constant="24" id="dLa-QB-Ndz"/>
+                                </constraints>
+                                <state key="normal" image="imageFromCameraRoll">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onAddPhotoFromCameraRollButtonPressed:" destination="n0D-Ku-Smv" eventType="touchUpInside" id="N1y-SN-t1G"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gty-Jx-iVX" firstAttribute="top" secondItem="nKp-t3-QYE" secondAttribute="bottom" constant="8" id="9yt-Na-Yrf"/>
+                            <constraint firstItem="HMj-YJ-vYD" firstAttribute="top" secondItem="WBx-Td-0li" secondAttribute="bottom" constant="35" id="A4O-f0-YM1"/>
+                            <constraint firstItem="Gty-Jx-iVX" firstAttribute="leading" secondItem="HMj-YJ-vYD" secondAttribute="leading" id="O53-XU-Jeh"/>
+                            <constraint firstItem="HMj-YJ-vYD" firstAttribute="top" secondItem="GBL-xx-gej" secondAttribute="bottom" constant="1" id="Uwc-aX-vkB"/>
+                            <constraint firstItem="HMj-YJ-vYD" firstAttribute="top" secondItem="QJF-Yt-IPv" secondAttribute="bottom" constant="35" id="Vn2-hb-i66"/>
+                            <constraint firstItem="QJF-Yt-IPv" firstAttribute="leading" secondItem="WBx-Td-0li" secondAttribute="trailing" constant="12" id="bFK-UT-9PM"/>
+                            <constraint firstAttribute="centerX" secondItem="Gty-Jx-iVX" secondAttribute="centerX" id="cuk-5u-dOS"/>
+                            <constraint firstItem="QJF-Yt-IPv" firstAttribute="centerX" secondItem="IfN-ZO-HE0" secondAttribute="centerX" id="gCB-K2-79d"/>
+                            <constraint firstItem="Gty-Jx-iVX" firstAttribute="leading" secondItem="GBL-xx-gej" secondAttribute="leading" id="hEG-Bc-0ad"/>
+                            <constraint firstItem="GBL-xx-gej" firstAttribute="top" secondItem="Gty-Jx-iVX" secondAttribute="bottom" constant="8" id="koS-0Q-RbM"/>
+                            <constraint firstItem="IfN-ZO-HE0" firstAttribute="trailing" secondItem="HMj-YJ-vYD" secondAttribute="trailing" id="sca-3d-xqI"/>
+                            <constraint firstItem="IfN-ZO-HE0" firstAttribute="top" secondItem="HMj-YJ-vYD" secondAttribute="bottom" constant="1" id="v40-7Q-mci"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Camera" image="camera" id="nWg-Bh-OAe"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addPhotoFromCameraRollButton" destination="QJF-Yt-IPv" id="R2F-m0-hMV"/>
+                        <outlet property="captionTextField" destination="HMj-YJ-vYD" id="YY5-9K-8Gs"/>
+                        <outlet property="imageView" destination="Gty-Jx-iVX" id="RDe-u7-Dah"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TEc-We-Ci6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -88,6 +175,8 @@
     <resources>
         <image name="camera" width="32" height="32"/>
         <image name="feed" width="32" height="32"/>
+        <image name="imageFromCamera" width="24" height="24"/>
+        <image name="imageFromCameraRoll" width="24" height="24"/>
         <image name="profile" width="32" height="32"/>
     </resources>
 </document>
