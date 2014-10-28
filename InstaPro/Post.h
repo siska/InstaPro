@@ -1,0 +1,15 @@
+//
+//  Post.h
+//  InstaPro
+//
+//  Created by Bradley Walker on 10/28/14.
+//  Copyright (c) 2014 Ryan Siska. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
+
+@interface Post : PFObject
+@property NSString *caption;
+@property PFFile *photoData;
+@end
