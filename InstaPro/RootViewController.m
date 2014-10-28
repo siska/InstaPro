@@ -54,7 +54,17 @@
 {
     if (self.loginSignUpToggle.selectedSegmentIndex == 0)
     {
-        //pull parse data for user
+        if ([self checkForEmptyTextfield:self.username.text] && [self checkForEmptyTextfield:self.password.text])
+        {
+            //Pass username to next ViewController and load users feed
+        }
+        else
+        {
+            self.passwordMatchingLabel.hidden = NO;
+            self.passwordMatchingLabel.text = @"Login Criteria Invalid. Try Again.";
+            self.password.text = @"";
+            [self.password becomeFirstResponder];
+        }
     }
     else //It will be on the Sign-up Screen so we can move right into those instructions
     {
@@ -64,7 +74,6 @@
             self.password.text = nil;
             self.verifyPassword.text = nil;
             [self.password becomeFirstResponder];
-
         }
         else
         {
@@ -84,6 +93,17 @@
 
 }
 
+- (BOOL)checkForEmptyTextfield:(NSString *)field
+{
+    if ([field length] == 0 || nil)
+    {
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
+}
 
 
 @end
