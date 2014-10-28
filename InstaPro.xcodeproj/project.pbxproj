@@ -11,7 +11,6 @@
 		1241398619FED7B100E26B60 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241398519FED7B100E26B60 /* AppDelegate.m */; };
 		1241398919FED7B100E26B60 /* InstaPro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1241398719FED7B100E26B60 /* InstaPro.xcdatamodeld */; };
 		1241398C19FED7B100E26B60 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241398B19FED7B100E26B60 /* RootViewController.m */; };
-		1241398F19FED7B100E26B60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1241398D19FED7B100E26B60 /* Main.storyboard */; };
 		1241399119FED7B100E26B60 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1241399019FED7B100E26B60 /* Images.xcassets */; };
 		1241399419FED7B100E26B60 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1241399219FED7B100E26B60 /* LaunchScreen.xib */; };
 		124139A019FED7B100E26B60 /* InstaProTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241399F19FED7B100E26B60 /* InstaProTests.m */; };
@@ -31,6 +30,7 @@
 		124139C419FEF5EB00E26B60 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 124139C319FEF5EB00E26B60 /* libz.dylib */; };
 		124139C719FEFC1900E26B60 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 124139C619FEFC1900E26B60 /* ProfileViewController.m */; };
 		124139CA19FF277A00E26B60 /* ProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 124139C919FF277A00E26B60 /* ProfileCollectionViewCell.m */; };
+		1290D50F1A002B3800CDCCEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1290D50E1A002B3800CDCCEE /* Main.storyboard */; };
 		4CEEB5E619FEF9BB00D35D4C /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEB5E519FEF9BB00D35D4C /* NewPostViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +53,6 @@
 		1241398819FED7B100E26B60 /* InstaPro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InstaPro.xcdatamodel; sourceTree = "<group>"; };
 		1241398A19FED7B100E26B60 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		1241398B19FED7B100E26B60 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		1241398E19FED7B100E26B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1241399019FED7B100E26B60 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1241399319FED7B100E26B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1241399919FED7B100E26B60 /* InstaProTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaProTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +76,7 @@
 		124139C619FEFC1900E26B60 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		124139C819FF277A00E26B60 /* ProfileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionViewCell.h; sourceTree = "<group>"; };
 		124139C919FF277A00E26B60 /* ProfileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionViewCell.m; sourceTree = "<group>"; };
+		1290D50E1A002B3800CDCCEE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		4CEEB5E419FEF9BB00D35D4C /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
 		4CEEB5E519FEF9BB00D35D4C /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,7 +136,7 @@
 			children = (
 				1241398419FED7B100E26B60 /* AppDelegate.h */,
 				1241398519FED7B100E26B60 /* AppDelegate.m */,
-				1241398D19FED7B100E26B60 /* Main.storyboard */,
+				1290D50E1A002B3800CDCCEE /* Main.storyboard */,
 				1241398A19FED7B100E26B60 /* RootViewController.h */,
 				1241398B19FED7B100E26B60 /* RootViewController.m */,
 				124139C519FEFC1900E26B60 /* ProfileViewController.h */,
@@ -273,9 +273,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1241398F19FED7B100E26B60 /* Main.storyboard in Resources */,
 				1241399419FED7B100E26B60 /* LaunchScreen.xib in Resources */,
 				1241399119FED7B100E26B60 /* Images.xcassets in Resources */,
+				1290D50F1A002B3800CDCCEE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,14 +322,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1241398D19FED7B100E26B60 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1241398E19FED7B100E26B60 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1241399219FED7B100E26B60 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
