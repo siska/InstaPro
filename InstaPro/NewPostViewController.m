@@ -9,11 +9,11 @@
 #import "NewPostViewController.h"
 #import <Parse/Parse.h>
 
-@interface NewPostViewController ()
+@interface NewPostViewController () <UIImagePickerControllerDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UIButton *addPhotoFromCameraRollButton;
 @property (strong, nonatomic) IBOutlet UITextField *captionTextField;
-
+@property UIImagePickerController *picker;
 @end
 
 @implementation NewPostViewController
@@ -22,31 +22,31 @@
 {
     [super viewDidLoad];
 
-    
+    self.picker = [[UIImagePickerController alloc] init];
+    self.picker.delegate = self;
 }
 
 #pragma mark - Manage Photo Selection
 - (IBAction)onAddPhotoFromCameraRollButtonPressed:(id)sender
 {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    [self presentViewController:picker animated:YES completion:NULL];
+    self.picker.allowsEditing = YES;
+    self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    self.picker.modalPresentationStyle = UIModalPresentationCurrentContext;
+    [self presentViewController:self.picker animated:YES completion:NULL];
 }
 
 - (IBAction)onAddPhotoFromCameraButtonPressed:(id)sender
 {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    [self presentViewController:picker animated:YES completion:NULL];
+    self.picker.allowsEditing = YES;
+    self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    self.picker.modalPresentationStyle = UIModalPresentationCurrentContext;
+    [self presentViewController:self.picker animated:YES completion:NULL];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *selectedImage = info[UIImagePickerControllerEditedImage];
     self.imageView.image = selectedImage;
+    UIImageWriteToSavedPhotosAlbum(self.imageView.image, nil, nil, nil);
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
