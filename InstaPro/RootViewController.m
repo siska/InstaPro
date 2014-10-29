@@ -40,7 +40,7 @@
         // Present the log in view controller
         [self presentViewController:logInViewController animated:YES completion:NULL];
     }else{
-        [self performSegueWithIdentifier:@"loginSignup" sender:self];
+        [self performSegueWithIdentifier:@"LoginSignup" sender:self];
     }
 }
 
