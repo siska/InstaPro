@@ -78,8 +78,7 @@
                 [self.NewsfeedCollectionView reloadData];
             }
     }];
-
     }
-    }
+}
 
 @end

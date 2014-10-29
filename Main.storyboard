@@ -357,7 +357,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="newsfeedLogoutButtonPressed:" destination="wBZ-Db-l6k" eventType="touchUpInside" id="ChH-h3-WCQ"/>
                                     <segue destination="Fw3-rO-w8t" kind="unwind" unwindAction="unwindFromNewsfeed:" id="1Vv-2d-3ld"/>
                                 </connections>
                             </button>
