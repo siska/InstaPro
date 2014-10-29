@@ -40,7 +40,7 @@
         // Present the log in view controller
         [self presentViewController:logInViewController animated:YES completion:NULL];
     }else{
-        [self performSegueWithIdentifier:@"loginSignup" sender:self];
+        [self performSegueWithIdentifier:@"LoginSignup" sender:self];
     }
 }
 
@@ -64,7 +64,7 @@
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     [self dismissViewControllerAnimated:YES completion:^{
-        [self performSegueWithIdentifier:@"loginSignup" sender:self];
+        [self performSegueWithIdentifier:@"LoginSignup" sender:self];
     }];
 }
 
@@ -106,7 +106,7 @@
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
     [self dismissViewControllerAnimated:YES completion:^{
-        [self performSegueWithIdentifier:@"loginSignup" sender:self];
+        [self performSegueWithIdentifier:@"LoginSignup" sender:self];
     }]; // Dismiss the PFSignUpViewController
 
 }
