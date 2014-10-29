@@ -38,7 +38,6 @@
     self.labelUsername.text = [PFUser currentUser].username;
 }
 
-
 -(void)refreshDisplayWithUserPhotos
 {
     PFQuery *queryForPosts = [PFQuery queryWithClassName:@"Post"];
@@ -68,9 +67,14 @@
                 // image can now be set on a UIImageView
             }
             [self.imageCollectionView reloadData];
+            [self setPostNumberCount];
         }];
-
     }
+}
+
+-(void)setPostNumberCount
+{
+    self.labelPosts.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.currentImages.count];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -87,5 +91,7 @@
     return self.currentImages.count;
 }
 
+- (IBAction)onProfileImageTapped:(id)sender {
+}
 
 @end
