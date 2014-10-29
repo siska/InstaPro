@@ -26,6 +26,8 @@
     self.imageArray = [NSMutableArray new];
     [self refreshNewsfeedWithPostPhotos];
 
+    NSLog(@"Current User %@", [PFUser currentUser]);
+
 }
 
 - (IBAction)newsfeedLogoutButtonPressed:(id)sender
