@@ -34,11 +34,28 @@
     PFUser *followUser = [self.allUsers objectAtIndex:indexPath.row];
     cell.textLabel.font = [UIFont systemFontOfSize:17];
     cell.textLabel.text = followUser.username;
-
-
     cell.followIcon.image = [UIImage imageNamed:@"followUser"];
 
     return cell;
+}
+
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    FollowerTableViewCell *cell = [tableView cellForRowAtIndexPath:[tableView indexPathForSelectedRow]];
+    cell.followIcon.image = [UIImage imageNamed:@"unfollowUser"];
+//    [self.tableView reloadData];
+}
+
+-(void)followUser
+{
+
+}
+
+-(void)unfollowUser
+{
+
 }
 
 - (void) refreshDisplay
@@ -56,11 +73,6 @@
              [self.tableView reloadData];
          }
      }];
-}
-
--(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-
 }
 
 @end
