@@ -33,6 +33,7 @@
 		1290D50F1A002B3800CDCCEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1290D50E1A002B3800CDCCEE /* Main.storyboard */; };
 		166CD8B11A0071D400D2618A /* NewsfeedCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 166CD8B01A0071D400D2618A /* NewsfeedCollectionViewCell.m */; };
 		16D236DF1A005D48009FC916 /* NewsfeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D236DE1A005D48009FC916 /* NewsfeedViewController.m */; };
+		4C07C62E1A0092B2007B7B27 /* UserFollows.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C07C62D1A0092B2007B7B27 /* UserFollows.m */; };
 		4C1960131A00314F00E1F327 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1960121A00314F00E1F327 /* Post.m */; };
 		4C1960161A00345000E1F327 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1960151A00345000E1F327 /* User.m */; };
 		4CEEB5E619FEF9BB00D35D4C /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEB5E519FEF9BB00D35D4C /* NewPostViewController.m */; };
@@ -85,6 +86,8 @@
 		166CD8B01A0071D400D2618A /* NewsfeedCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsfeedCollectionViewCell.m; sourceTree = "<group>"; };
 		16D236DD1A005D48009FC916 /* NewsfeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsfeedViewController.h; sourceTree = "<group>"; };
 		16D236DE1A005D48009FC916 /* NewsfeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsfeedViewController.m; sourceTree = "<group>"; };
+		4C07C62C1A0092B2007B7B27 /* UserFollows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFollows.h; sourceTree = "<group>"; };
+		4C07C62D1A0092B2007B7B27 /* UserFollows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFollows.m; sourceTree = "<group>"; };
 		4C1960111A00314F00E1F327 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		4C1960121A00314F00E1F327 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		4C1960141A00345000E1F327 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 				4C1960121A00314F00E1F327 /* Post.m */,
 				4C1960141A00345000E1F327 /* User.h */,
 				4C1960151A00345000E1F327 /* User.m */,
+				4C07C62C1A0092B2007B7B27 /* UserFollows.h */,
+				4C07C62D1A0092B2007B7B27 /* UserFollows.m */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1241398619FED7B100E26B60 /* AppDelegate.m in Sources */,
+				4C07C62E1A0092B2007B7B27 /* UserFollows.m in Sources */,
 				4CEEB5E619FEF9BB00D35D4C /* NewPostViewController.m in Sources */,
 				4C1960161A00345000E1F327 /* User.m in Sources */,
 				1241398319FED7B100E26B60 /* main.m in Sources */,
