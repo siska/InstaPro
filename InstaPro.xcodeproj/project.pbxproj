@@ -37,6 +37,7 @@
 		4C1960131A00314F00E1F327 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1960121A00314F00E1F327 /* Post.m */; };
 		4C1960161A00345000E1F327 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1960151A00345000E1F327 /* User.m */; };
 		4C66C2CE1A017BE9009BC31F /* FollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C66C2CD1A017BE9009BC31F /* FollowViewController.m */; };
+		4C66C2D11A018C1B009BC31F /* FollowerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C66C2D01A018C1B009BC31F /* FollowerTableViewCell.m */; };
 		4CEEB5E619FEF9BB00D35D4C /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEB5E519FEF9BB00D35D4C /* NewPostViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,8 @@
 		4C1960151A00345000E1F327 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		4C66C2CC1A017BE9009BC31F /* FollowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowViewController.h; sourceTree = "<group>"; };
 		4C66C2CD1A017BE9009BC31F /* FollowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowViewController.m; sourceTree = "<group>"; };
+		4C66C2CF1A018C1B009BC31F /* FollowerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowerTableViewCell.h; sourceTree = "<group>"; };
+		4C66C2D01A018C1B009BC31F /* FollowerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowerTableViewCell.m; sourceTree = "<group>"; };
 		4CEEB5E419FEF9BB00D35D4C /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
 		4CEEB5E519FEF9BB00D35D4C /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +172,8 @@
 				4CEEB5E519FEF9BB00D35D4C /* NewPostViewController.m */,
 				4C66C2CC1A017BE9009BC31F /* FollowViewController.h */,
 				4C66C2CD1A017BE9009BC31F /* FollowViewController.m */,
+				4C66C2CF1A018C1B009BC31F /* FollowerTableViewCell.h */,
+				4C66C2D01A018C1B009BC31F /* FollowerTableViewCell.m */,
 				1241399019FED7B100E26B60 /* Images.xcassets */,
 				1241399219FED7B100E26B60 /* LaunchScreen.xib */,
 				1241398719FED7B100E26B60 /* InstaPro.xcdatamodeld */,
@@ -334,6 +339,7 @@
 				1241398619FED7B100E26B60 /* AppDelegate.m in Sources */,
 				4C07C62E1A0092B2007B7B27 /* UserFollows.m in Sources */,
 				4CEEB5E619FEF9BB00D35D4C /* NewPostViewController.m in Sources */,
+				4C66C2D11A018C1B009BC31F /* FollowerTableViewCell.m in Sources */,
 				4C1960161A00345000E1F327 /* User.m in Sources */,
 				4C66C2CE1A017BE9009BC31F /* FollowViewController.m in Sources */,
 				1241398319FED7B100E26B60 /* main.m in Sources */,
