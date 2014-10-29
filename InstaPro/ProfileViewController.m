@@ -15,8 +15,8 @@
 @property NSArray *photo;
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (strong, nonatomic) IBOutlet UILabel *labelPosts;
-@property (strong, nonatomic) IBOutlet UILabel *labelFollowers;
-@property (strong, nonatomic) IBOutlet UILabel *labelFollowing;
+//@property (strong, nonatomic) IBOutlet UILabel *labelFollowers;
+//@property (strong, nonatomic) IBOutlet UILabel *labelFollowing;
 @property (strong, nonatomic) IBOutlet UILabel *labelUsername;
 @property UIImage *usersPhoto;
 @property (strong, nonatomic) IBOutlet UICollectionView *imageCollectionView;
@@ -52,7 +52,8 @@
 {
     PFObject *person = self.user.firstObject; //will have to change to say I want a specific user - the main user
     //self.profileImageView = person[@"profilePhoto"]; - will likely have to actually convert this from data
-    self.labelUsername.text = person[@"username"];
+    self.labelUsername.text = person[@"email"];
+    NSLog(@"Username: %@", person[@"email"]);
     // no array yet - self.labelPosts.text = person[@"postArray"].count;
     //will use this space to set
 }
