@@ -8,18 +8,18 @@
 
 #import "RootViewController.h"
 #import <Parse/Parse.h>
-
+#import "NewsfeedViewController.h"
 
 @interface RootViewController ()
 
-
+@property NewsfeedViewController *newsFeedCtrl;
 @end
 
 @implementation RootViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+   self.newsFeedCtrl = [NewsfeedViewController new];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -39,6 +39,8 @@
 
         // Present the log in view controller
         [self presentViewController:logInViewController animated:YES completion:NULL];
+    }else{
+        [self performSegueWithIdentifier:@"loginSignup" sender:self];
     }
 }
 
@@ -61,7 +63,9 @@
 
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self performSegueWithIdentifier:@"loginSignup" sender:self];
+    }];
 }
 
 // Sent to the delegate when the log in attempt fails.
@@ -102,8 +106,9 @@
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
     [self dismissViewControllerAnimated:YES completion:^{
-        
+        [self performSegueWithIdentifier:@"loginSignup" sender:self];
     }]; // Dismiss the PFSignUpViewController
+
 }
 
 // Sent to the delegate when the sign up attempt fails.
