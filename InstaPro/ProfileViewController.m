@@ -38,6 +38,7 @@
     self.labelUsername.text = [PFUser currentUser].username;
 }
 
+
 -(void)refreshDisplayWithUserPhotos
 {
     PFQuery *queryForPosts = [PFQuery queryWithClassName:@"Post"];
