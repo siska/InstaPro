@@ -121,4 +121,10 @@
     NSLog(@"User dismissed the signUpViewController");
 }
 
+//Logout
+- (IBAction)unwindFromNewsfeed:(UIStoryboardSegue *)sender
+{
+    [PFUser logOut];
+}
+
 @end

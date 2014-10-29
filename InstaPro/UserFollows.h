@@ -11,7 +11,7 @@
 #import "User.h"
 
 @interface UserFollows : PFObject <PFSubclassing>
-@property User *user;
-@property User *followee;
+@property PFUser *user;
+@property PFUser *followee;
 
 @end

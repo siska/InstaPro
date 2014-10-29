@@ -57,6 +57,7 @@
 
     newPost[@"photoData"] = [PFFile fileWithData:UIImagePNGRepresentation(self.imageView.image)];
     newPost[@"caption"] = self.captionTextField.text;
+    newPost[@"user"] = [PFUser currentUser];
 
     [newPost saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error)
@@ -64,6 +65,9 @@
             NSLog(@"Error: %@", [error userInfo]);
         }
     }];
+
+    [self.captionTextField resignFirstResponder];
+    
 }
 
 @end
