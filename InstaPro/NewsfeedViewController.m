@@ -30,9 +30,9 @@
 
 }
 
-- (IBAction)newsfeedLogoutButtonPressed:(id)sender
+- (void)viewDidAppear:(BOOL)animated
 {
-    //Figure out how to logout and unwind back to the rootVC where the Parse login is.
+    [self refreshNewsfeedWithPostPhotos];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -70,20 +70,21 @@
 
 -(void)setPhotosForUser
 {
-    PFObject *photo = self.photosFromPostQuery.firstObject;
-    PFFile *file = photo[@"photoData"];
+    for (PFObject *photo in self.photosFromPostQuery)
+    {
+        PFFile *file = photo[@"photoData"];
 
-
-    //PFFile *file = [PFObject objectWithClassName:@"photoData"];
-    [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-        if (!error) {
-            UIImage *image = [UIImage imageWithData:data];
-            [self.imageArray addObject:image];
-            [self.NewsfeedCollectionView reloadData];
-            //self.usersPhotosImageView.image = image;
-            // image can now be set on a UIImageView
-        }
+        [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error)
+        {
+            if (!error)
+            {
+                UIImage *image = [UIImage imageWithData:data];
+                [self.imageArray addObject:image];
+                [self.NewsfeedCollectionView reloadData];
+            }
     }];
-}
+
+    }
+    }
 
 @end
