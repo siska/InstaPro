@@ -35,7 +35,7 @@
 
 -(void)refreshDisplayWithUserInfo
 {
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             NSLog(@"Error: %@", error.userInfo);
@@ -52,8 +52,8 @@
 {
     PFObject *person = self.user.firstObject; //will have to change to say I want a specific user - the main user
     //self.profileImageView = person[@"profilePhoto"]; - will likely have to actually convert this from data
-    self.labelUsername.text = person[@"email"];
-    NSLog(@"Username: %@", person[@"email"]);
+    self.labelUsername.text = person[@"username"];
+    NSLog(@"Username: %@", person[@"username"]);
     // no array yet - self.labelPosts.text = person[@"postArray"].count;
     //will use this space to set
 }
