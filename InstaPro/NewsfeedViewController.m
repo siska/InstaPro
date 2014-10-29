@@ -30,11 +30,6 @@
 
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [self refreshNewsfeedWithPostPhotos];
-}
-
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return 1;
