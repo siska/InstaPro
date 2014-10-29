@@ -31,6 +31,8 @@
 		124139C719FEFC1900E26B60 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 124139C619FEFC1900E26B60 /* ProfileViewController.m */; };
 		124139CA19FF277A00E26B60 /* ProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 124139C919FF277A00E26B60 /* ProfileCollectionViewCell.m */; };
 		1290D50F1A002B3800CDCCEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1290D50E1A002B3800CDCCEE /* Main.storyboard */; };
+		166CD8B11A0071D400D2618A /* NewsfeedCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 166CD8B01A0071D400D2618A /* NewsfeedCollectionViewCell.m */; };
+		16D236DF1A005D48009FC916 /* NewsfeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D236DE1A005D48009FC916 /* NewsfeedViewController.m */; };
 		4C1960131A00314F00E1F327 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1960121A00314F00E1F327 /* Post.m */; };
 		4C1960161A00345000E1F327 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1960151A00345000E1F327 /* User.m */; };
 		4CEEB5E619FEF9BB00D35D4C /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEB5E519FEF9BB00D35D4C /* NewPostViewController.m */; };
@@ -79,6 +81,10 @@
 		124139C819FF277A00E26B60 /* ProfileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionViewCell.h; sourceTree = "<group>"; };
 		124139C919FF277A00E26B60 /* ProfileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionViewCell.m; sourceTree = "<group>"; };
 		1290D50E1A002B3800CDCCEE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
+		166CD8AF1A0071D400D2618A /* NewsfeedCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsfeedCollectionViewCell.h; sourceTree = "<group>"; };
+		166CD8B01A0071D400D2618A /* NewsfeedCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsfeedCollectionViewCell.m; sourceTree = "<group>"; };
+		16D236DD1A005D48009FC916 /* NewsfeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsfeedViewController.h; sourceTree = "<group>"; };
+		16D236DE1A005D48009FC916 /* NewsfeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsfeedViewController.m; sourceTree = "<group>"; };
 		4C1960111A00314F00E1F327 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		4C1960121A00314F00E1F327 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		4C1960141A00345000E1F327 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -143,6 +149,10 @@
 				1241398419FED7B100E26B60 /* AppDelegate.h */,
 				1241398519FED7B100E26B60 /* AppDelegate.m */,
 				1290D50E1A002B3800CDCCEE /* Main.storyboard */,
+				16D236DD1A005D48009FC916 /* NewsfeedViewController.h */,
+				16D236DE1A005D48009FC916 /* NewsfeedViewController.m */,
+				166CD8AF1A0071D400D2618A /* NewsfeedCollectionViewCell.h */,
+				166CD8B01A0071D400D2618A /* NewsfeedCollectionViewCell.m */,
 				1241398A19FED7B100E26B60 /* RootViewController.h */,
 				1241398B19FED7B100E26B60 /* RootViewController.m */,
 				124139C519FEFC1900E26B60 /* ProfileViewController.h */,
@@ -316,10 +326,12 @@
 				4C1960161A00345000E1F327 /* User.m in Sources */,
 				1241398319FED7B100E26B60 /* main.m in Sources */,
 				1241398C19FED7B100E26B60 /* RootViewController.m in Sources */,
+				166CD8B11A0071D400D2618A /* NewsfeedCollectionViewCell.m in Sources */,
 				1241398919FED7B100E26B60 /* InstaPro.xcdatamodeld in Sources */,
 				124139CA19FF277A00E26B60 /* ProfileCollectionViewCell.m in Sources */,
 				124139C719FEFC1900E26B60 /* ProfileViewController.m in Sources */,
 				4C1960131A00314F00E1F327 /* Post.m in Sources */,
+				16D236DF1A005D48009FC916 /* NewsfeedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
