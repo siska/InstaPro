@@ -503,7 +503,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onSaveButtonPressed:" destination="n0D-Ku-Smv" eventType="touchUpInside" id="fLY-fj-4g2"/>
-                                    <segue destination="Qeh-rM-LUr" kind="unwind" unwindAction="unwindFollowUser:" id="xrM-eq-iqK"/>
+                                    <segue destination="Qeh-rM-LUr" kind="unwind" unwindAction="unwindFromAddPost:" id="2JS-oY-L4j"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBx-Td-0li">
