@@ -24,7 +24,7 @@
     self.userFollowed = [[NSArray alloc] init];
     self.followedUsers = [[NSArray alloc] init];
 
-    [self checkFollowers:[PFUser currentUser]];
+    [self checkFollowees:[PFUser currentUser]];
     [self refreshDisplay];
 }
 
@@ -40,16 +40,24 @@
     cell.textLabel.font = [UIFont systemFontOfSize:17];
     cell.textLabel.text = followUser.username;
 
-    if ([self.followedUsers containsObject:followUser])
+    if (self.followedUsers.count != 0)
     {
-        cell.followIcon.image = [UIImage imageNamed:@"unfollowUser"];
-
+        for (UserFollows *userFollowRecord in self.followedUsers)
+        {
+            if ([userFollowRecord.followee.objectId isEqualToString:followUser.objectId])
+            {
+                cell.followIcon.image = [UIImage imageNamed:@"unfollowUser"];
+            }
+            else
+            {
+                cell.followIcon.image = [UIImage imageNamed:@"followUser"];
+            }
+        }
     }
     else
     {
         cell.followIcon.image = [UIImage imageNamed:@"followUser"];
     }
-
     return cell;
 }
 
@@ -69,7 +77,7 @@
     userFollow.user = [PFUser currentUser];
     userFollow.followee = followee;
     [userFollow saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        [self checkFollowers:[PFUser currentUser]];
+        [self checkFollowees:[PFUser currentUser]];
     }];
 }
 
@@ -78,11 +86,11 @@
     NSLog(@"User unfollowed");
     UserFollows *userFollow = self.userFollowed.firstObject;
     [userFollow deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        [self checkFollowers:[PFUser currentUser]];
+        [self checkFollowees:[PFUser currentUser]];
     }];
 }
 
-- (void) checkFollowers:(PFUser *)selectedUser
+- (void) checkFollowees:(PFUser *)selectedUser
 {
     PFQuery *followersQuery = [PFQuery queryWithClassName:@"UserFollows"];
     [followersQuery whereKey:@"user" equalTo:[PFUser currentUser]];
@@ -96,9 +104,8 @@
          else
          {
              self.followedUsers = objects;
+             [self.tableView reloadData];
          }
-
-         [self.tableView reloadData];
      }];
 }
 
