@@ -81,4 +81,9 @@
     }
 }
 
+-(IBAction)unwindFromAddPost:(UIStoryboardSegue *)sender
+{
+    [self.NewsfeedCollectionView reloadData];
+}
+
 @end
