@@ -13,14 +13,17 @@
 @interface FollowViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray *allUsers;
+@property NSArray *followedUsers;
 @end
 
 @implementation FollowViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     [self refreshDisplay];
+
+    self.followedUsers = [[NSArray alloc] init];
+
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -43,25 +46,61 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    PFUser *selectedUser = [self.allUsers objectAtIndex:[tableView indexPathForSelectedRow].row];
     FollowerTableViewCell *cell = [tableView cellForRowAtIndexPath:[tableView indexPathForSelectedRow]];
     cell.followIcon.image = [UIImage imageNamed:@"unfollowUser"];
-//    [self.tableView reloadData];
+
+    [self checkFollowers:selectedUser];
 }
 
--(void)followUser
+-(void)followUser:(PFUser *)followee
 {
-
+    NSLog(@"User followed");
+    UserFollows *userFollow = [UserFollows object];
+    userFollow.user = [PFUser currentUser];
+    userFollow.followee = followee;
+    [userFollow saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    }];
 }
 
 -(void)unfollowUser
 {
+    NSLog(@"User unfollowed");
+}
 
+- (void) checkFollowers:(PFUser *)selectedUser
+{
+    PFQuery *followingQuery = [PFQuery queryWithClassName:@"UserFollows"];
+    [followingQuery whereKey:@"followee" equalTo:selectedUser];
+    [followingQuery whereKey:@"user" equalTo:[PFUser currentUser]];
+
+    [followingQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+     if (error)
+     {
+         NSLog(@"%@", error);
+     }
+     else
+     {
+         self.followedUsers = objects;
+
+         if (self.followedUsers.count == 0)
+         {
+             [self followUser:selectedUser];
+         }
+         else //create unfollow logic
+             
+         {
+             [self unfollowUser];
+         }
+     }
+     }];
 }
 
 - (void) refreshDisplay
 {
-            PFQuery *followingQuery = [PFQuery queryWithClassName:[PFUser parseClassName]];
-    [followingQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    PFQuery *allUsers = [PFQuery queryWithClassName:[PFUser parseClassName]];
+    [allUsers findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
          if (error)
          {
