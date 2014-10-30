@@ -302,7 +302,13 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ln0-rC-mb5">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="Mvf-Uw-SFm"/>
+                                    <navigationItem title="Title" id="Mvf-Uw-SFm">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="Ks5-C6-bHn">
+                                            <connections>
+                                                <segue destination="tlm-dt-xMf" kind="unwind" unwindAction="unwindFollowUser:" id="ktM-5q-0c7"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -322,6 +328,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12Z-QK-ehZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tlm-dt-xMf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1813" y="-26"/>
         </scene>

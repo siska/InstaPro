@@ -48,8 +48,6 @@
 {
     PFUser *selectedUser = [self.allUsers objectAtIndex:[tableView indexPathForSelectedRow].row];
     FollowerTableViewCell *cell = [tableView cellForRowAtIndexPath:[tableView indexPathForSelectedRow]];
-    cell.followIcon.image = [UIImage imageNamed:@"unfollowUser"];
-
     [self checkFollowers:selectedUser];
 }
 

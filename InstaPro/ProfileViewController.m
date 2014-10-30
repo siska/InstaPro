@@ -94,4 +94,9 @@
 - (IBAction)onProfileImageTapped:(id)sender {
 }
 
+-(IBAction)unwindFollowUser:(UIStoryboardSegue *)sender
+{
+
+}
+
 @end
