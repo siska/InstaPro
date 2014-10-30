@@ -70,7 +70,7 @@
     }
     else
     {
-        for (PFObject *profilePhoto in self.profilePhotos)
+        for (PFObject *profilePhoto in self.profilePhotos.lastObject)
         {
             PFFile *file = profilePhoto[@"photoData"];
             [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
@@ -147,7 +147,7 @@
 - (IBAction)onAddPhotoFromCameraButtonPressed:(id)sender
 {
     self.picker.allowsEditing = YES;
-    self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    self.picker.sourceType = UIImagePickerControllerCameraDeviceFront;
     self.picker.modalPresentationStyle = UIModalPresentationCurrentContext;
     [self presentViewController:self.picker animated:YES completion:NULL];
 }
