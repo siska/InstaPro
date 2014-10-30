@@ -70,7 +70,7 @@
     }
     else
     {
-        for (PFObject *profilePhoto in self.profilePhotos.lastObject)
+        for (PFObject *profilePhoto in self.profilePhotos.firstObject)
         {
             PFFile *file = profilePhoto[@"photoData"];
             [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
