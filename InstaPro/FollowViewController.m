@@ -13,6 +13,7 @@
 @interface FollowViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray *allUsers;
+@property NSArray *userFollowed;
 @property NSArray *followedUsers;
 @end
 
@@ -20,10 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self refreshDisplay];
-
+    self.userFollowed = [[NSArray alloc] init];
     self.followedUsers = [[NSArray alloc] init];
 
+    [self checkFollowers:[PFUser currentUser]];
+    [self refreshDisplay];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -37,7 +39,16 @@
     PFUser *followUser = [self.allUsers objectAtIndex:indexPath.row];
     cell.textLabel.font = [UIFont systemFontOfSize:17];
     cell.textLabel.text = followUser.username;
-    cell.followIcon.image = [UIImage imageNamed:@"followUser"];
+
+    if ([self.followedUsers containsObject:followUser])
+    {
+        cell.followIcon.image = [UIImage imageNamed:@"unfollowUser"];
+
+    }
+    else
+    {
+        cell.followIcon.image = [UIImage imageNamed:@"followUser"];
+    }
 
     return cell;
 }
@@ -48,7 +59,7 @@
 {
     PFUser *selectedUser = [self.allUsers objectAtIndex:[tableView indexPathForSelectedRow].row];
     FollowerTableViewCell *cell = [tableView cellForRowAtIndexPath:[tableView indexPathForSelectedRow]];
-    [self checkFollowers:selectedUser];
+    [self checkFollowRelationship:selectedUser];
 }
 
 -(void)followUser:(PFUser *)followee
@@ -58,24 +69,46 @@
     userFollow.user = [PFUser currentUser];
     userFollow.followee = followee;
     [userFollow saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [self checkFollowers:[PFUser currentUser]];
     }];
 }
 
 -(void)unfollowUser
 {
     NSLog(@"User unfollowed");
-    UserFollows *userFollow = self.followedUsers.firstObject;
+    UserFollows *userFollow = self.userFollowed.firstObject;
     [userFollow deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [self checkFollowers:[PFUser currentUser]];
     }];
 }
 
 - (void) checkFollowers:(PFUser *)selectedUser
 {
-    PFQuery *followingQuery = [PFQuery queryWithClassName:@"UserFollows"];
-    [followingQuery whereKey:@"followee" equalTo:selectedUser];
-    [followingQuery whereKey:@"user" equalTo:[PFUser currentUser]];
+    PFQuery *followersQuery = [PFQuery queryWithClassName:@"UserFollows"];
+    [followersQuery whereKey:@"user" equalTo:[PFUser currentUser]];
 
-    [followingQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    [followersQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         if (error)
+         {
+             NSLog(@"%@", error);
+         }
+         else
+         {
+             self.followedUsers = objects;
+         }
+
+         [self.tableView reloadData];
+     }];
+}
+
+- (void) checkFollowRelationship:(PFUser *)selectedUser
+{
+    PFQuery *isFollowedQuery = [PFQuery queryWithClassName:@"UserFollows"];
+    [isFollowedQuery whereKey:@"followee" equalTo:selectedUser];
+    [isFollowedQuery whereKey:@"user" equalTo:[PFUser currentUser]];
+
+    [isFollowedQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
      if (error)
      {
@@ -83,9 +116,9 @@
      }
      else
      {
-         self.followedUsers = objects;
+         self.userFollowed = objects;
 
-         if (self.followedUsers.count == 0)
+         if (self.userFollowed.count == 0)
          {
              [self followUser:selectedUser];
          }
@@ -100,6 +133,7 @@
 - (void) refreshDisplay
 {
     PFQuery *allUsers = [PFQuery queryWithClassName:[PFUser parseClassName]];
+    [allUsers whereKey:@"objectId" notEqualTo:[PFUser currentUser].objectId];
     [allUsers findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
          if (error)
