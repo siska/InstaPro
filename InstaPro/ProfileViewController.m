@@ -22,6 +22,7 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *imageCollectionView;
 @property NSMutableArray *currentImages;
 @property UIImagePickerController *picker;
+@property NSArray *profilePhotos;
 
 
 @end
@@ -34,6 +35,7 @@
     self.picker.delegate = self;
     self.currentImages = [NSMutableArray new];
     [self setUserProfileInformation];
+    [self queryUserProfileImage];
     [self refreshDisplayWithUserPhotos];
 
 }
@@ -41,6 +43,44 @@
 -(void)setUserProfileInformation
 {
     self.labelUsername.text = [PFUser currentUser].username;
+}
+
+-(void)queryUserProfileImage
+{
+    PFQuery *queryForProfileImage = [PFQuery queryWithClassName:@"ProfileImage"];
+    [queryForProfileImage whereKey:@"user" equalTo:[PFUser currentUser]];
+    [queryForProfileImage findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", error.userInfo);
+            self.profilePhotos = [NSArray array];
+        }
+        else
+        {
+            self.profilePhotos = objects;
+            [self setProfileForUser];
+        }
+    }];
+}
+
+-(void)setProfileForUser
+{
+    if (self.profilePhotos.count == 0)
+    {
+        NSLog(@"The profile image should stay");
+    }
+    else
+    {
+        for (PFObject *profilePhoto in self.profilePhotos)
+        {
+            PFFile *file = profilePhoto[@"photoData"];
+            [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                if (!error) {
+                    UIImage *image = [UIImage imageWithData:data];
+                    self.profileImageView.image = image;
+                }
+            }];
+        }
+    }
 }
 
 -(void)refreshDisplayWithUserPhotos
@@ -117,6 +157,7 @@
     self.profileImageView.image = selectedImage;
     UIImageWriteToSavedPhotosAlbum(self.profileImageView.image, nil, nil, nil);
     [picker dismissViewControllerAnimated:YES completion:NULL];
+    [self saveProfileImageToParse];
 }
 
 -(void)saveProfileImageToParse
