@@ -66,6 +66,9 @@
 -(void)unfollowUser
 {
     NSLog(@"User unfollowed");
+    UserFollows *userFollow = self.followedUsers.firstObject;
+    [userFollow deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    }];
 }
 
 - (void) checkFollowers:(PFUser *)selectedUser
@@ -88,8 +91,7 @@
          {
              [self followUser:selectedUser];
          }
-         else //create unfollow logic
-             
+         else
          {
              [self unfollowUser];
          }
