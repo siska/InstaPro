@@ -58,6 +58,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap to add that prof pic" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iep-AY-PKu">
+                                <rect key="frame" x="225" y="64" width="150" height="150"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ZZu-7p-VXb" appends="YES" id="BmQ-Pc-lVp"/>
+                                </connections>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omd-eR-QCa">
                                 <rect key="frame" x="244" y="28" width="112" height="21"/>
                                 <constraints>
@@ -75,9 +85,6 @@
                                     <constraint firstAttribute="height" constant="150" id="eQx-ah-xYe"/>
                                     <constraint firstAttribute="width" constant="150" id="rP3-Ak-hC7"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="AJJ-1o-61J" appends="YES" id="Ed5-Wx-zIY"/>
-                                </connections>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e7g-0Y-jtO">
                                 <rect key="frame" x="0.0" y="226" width="600" height="325"/>
@@ -237,9 +244,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JMZ-K1-fbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="AJJ-1o-61J">
+                <tapGestureRecognizer id="ZZu-7p-VXb">
                     <connections>
-                        <action selector="onProfileImageTapped:" destination="ENP-ys-3wD" id="GGc-eQ-R9G"/>
+                        <action selector="onProfileImageTapped:" destination="ENP-ys-3wD" id="mBc-gM-f8N"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
