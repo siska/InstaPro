@@ -94,7 +94,7 @@
 - (IBAction)onProfileImageTapped:(id)sender {
     NSLog(@"Tapped");
 
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"AlertView" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    /*UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"AlertView" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"GO" style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
                                                               //  [action doSomething];
@@ -118,7 +118,8 @@
         textField.placeholder = @"Your Password here";
     }];
     
-    [self presentViewController:alert animated:YES completion:nil];}
+    [self presentViewController:alert animated:YES completion:nil];}*/
+}
 
 -(IBAction)unwindFollowUser:(UIStoryboardSegue *)sender
 {

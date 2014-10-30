@@ -58,16 +58,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap to add that prof pic" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iep-AY-PKu">
-                                <rect key="frame" x="225" y="64" width="150" height="150"/>
-                                <gestureRecognizers/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="ZZu-7p-VXb" appends="YES" id="BmQ-Pc-lVp"/>
-                                </connections>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omd-eR-QCa">
                                 <rect key="frame" x="244" y="28" width="112" height="21"/>
                                 <constraints>
@@ -78,13 +68,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TBV-mt-7KH">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileimage" translatesAutoresizingMaskIntoConstraints="NO" id="TBV-mt-7KH">
                                 <rect key="frame" x="225" y="64" width="150" height="150"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="eQx-ah-xYe"/>
                                     <constraint firstAttribute="width" constant="150" id="rP3-Ak-hC7"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="dpw-Om-AFN" appends="YES" id="mWX-8m-KIO"/>
+                                    <outletCollection property="gestureRecognizers" destination="dpw-Om-AFN" appends="YES" id="yEv-HO-IhN"/>
+                                    <outletCollection property="gestureRecognizers" destination="dpw-Om-AFN" appends="YES" id="Nn3-fl-ROV"/>
+                                </connections>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e7g-0Y-jtO">
                                 <rect key="frame" x="0.0" y="226" width="600" height="325"/>
@@ -244,9 +239,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JMZ-K1-fbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="ZZu-7p-VXb">
+                <tapGestureRecognizer id="dpw-Om-AFN">
                     <connections>
-                        <action selector="onProfileImageTapped:" destination="ENP-ys-3wD" id="mBc-gM-f8N"/>
+                        <action selector="onProfileImageTapped:" destination="ENP-ys-3wD" id="B8y-YP-HPw"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -503,7 +498,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onSaveButtonPressed:" destination="n0D-Ku-Smv" eventType="touchUpInside" id="fLY-fj-4g2"/>
-                                    <segue destination="Qeh-rM-LUr" kind="unwind" unwindAction="unwindFromAddPost:" id="2JS-oY-L4j"/>
+                                    <segue destination="Qeh-rM-LUr" kind="unwind" unwindAction="unwindFollowUser:" id="xrM-eq-iqK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBx-Td-0li">
@@ -578,6 +573,7 @@
         <image name="imageFromCamera" width="24" height="24"/>
         <image name="imageFromCameraRoll" width="24" height="24"/>
         <image name="profile" width="32" height="32"/>
+        <image name="profileimage" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="KVu-zK-sjm"/>
