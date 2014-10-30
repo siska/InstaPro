@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import "ProfileCollectionViewCell.h"
 
-@interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate>
 @property NSArray *user;
 @property NSArray *photos;
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
@@ -21,6 +21,8 @@
 @property UIImage *usersPhoto;
 @property (strong, nonatomic) IBOutlet UICollectionView *imageCollectionView;
 @property NSMutableArray *currentImages;
+@property UIImagePickerController *picker;
+
 
 @end
 
@@ -28,9 +30,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.picker = [[UIImagePickerController alloc] init];
+    self.picker.delegate = self;
     self.currentImages = [NSMutableArray new];
     [self setUserProfileInformation];
     [self refreshDisplayWithUserPhotos];
+
 }
 
 -(void)setUserProfileInformation
@@ -93,33 +98,44 @@
 
 - (IBAction)onProfileImageTapped:(id)sender {
     NSLog(@"Tapped");
+    [self onAddPhotoFromCameraButtonPressed:sender];
 
-    /*UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"AlertView" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"GO" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {
-                                                              //  [action doSomething];
-                                                          }];
-    UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault
-                                                   handler:^(UIAlertAction * action) {
-                                                       [alert dismissViewControllerAnimated:YES completion:nil];
-                                                   }];
-
-    [alert addAction:defaultAction];
-    [alert addAction:cancel];
-    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"Your username here";
-
-    }];
-    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"Your Email here";
-    }];
-    
-    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"Your Password here";
-    }];
-    
-    [self presentViewController:alert animated:YES completion:nil];}*/
 }
+
+#pragma mark UIImagePicker Methods & Delegates
+
+- (IBAction)onAddPhotoFromCameraButtonPressed:(id)sender
+{
+    self.picker.allowsEditing = YES;
+    self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    self.picker.modalPresentationStyle = UIModalPresentationCurrentContext;
+    [self presentViewController:self.picker animated:YES completion:NULL];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *selectedImage = info[UIImagePickerControllerEditedImage];
+    self.profileImageView.image = selectedImage;
+    UIImageWriteToSavedPhotosAlbum(self.profileImageView.image, nil, nil, nil);
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+-(void)saveProfileImageToParse
+{
+    PFObject *newProfileImage = [PFObject objectWithClassName:@"ProfileImage"];
+
+    newProfileImage[@"photoData"] = [PFFile fileWithData:UIImagePNGRepresentation(self.profileImageView.image)];
+    newProfileImage[@"user"] = [PFUser currentUser];
+
+    [newProfileImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error)
+        {
+            NSLog(@"Error: %@", [error userInfo]);
+        }
+    }];
+}
+
+
+#pragma mark Unwind Segue
 
 -(IBAction)unwindFollowUser:(UIStoryboardSegue *)sender
 {

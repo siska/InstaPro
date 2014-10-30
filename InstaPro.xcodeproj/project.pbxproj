@@ -30,6 +30,7 @@
 		124139C419FEF5EB00E26B60 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 124139C319FEF5EB00E26B60 /* libz.dylib */; };
 		124139C719FEFC1900E26B60 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 124139C619FEFC1900E26B60 /* ProfileViewController.m */; };
 		124139CA19FF277A00E26B60 /* ProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 124139C919FF277A00E26B60 /* ProfileCollectionViewCell.m */; };
+		1241B99E1A0298FF003BD083 /* ProfileImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241B99D1A0298FF003BD083 /* ProfileImage.m */; };
 		1290D50F1A002B3800CDCCEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1290D50E1A002B3800CDCCEE /* Main.storyboard */; };
 		166CD8B11A0071D400D2618A /* NewsfeedCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 166CD8B01A0071D400D2618A /* NewsfeedCollectionViewCell.m */; };
 		16D236DF1A005D48009FC916 /* NewsfeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D236DE1A005D48009FC916 /* NewsfeedViewController.m */; };
@@ -83,6 +84,8 @@
 		124139C619FEFC1900E26B60 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		124139C819FF277A00E26B60 /* ProfileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionViewCell.h; sourceTree = "<group>"; };
 		124139C919FF277A00E26B60 /* ProfileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionViewCell.m; sourceTree = "<group>"; };
+		1241B99C1A0298FF003BD083 /* ProfileImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileImage.h; sourceTree = "<group>"; };
+		1241B99D1A0298FF003BD083 /* ProfileImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileImage.m; sourceTree = "<group>"; };
 		1290D50E1A002B3800CDCCEE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		166CD8AF1A0071D400D2618A /* NewsfeedCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsfeedCollectionViewCell.h; sourceTree = "<group>"; };
 		166CD8B01A0071D400D2618A /* NewsfeedCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsfeedCollectionViewCell.m; sourceTree = "<group>"; };
@@ -228,6 +231,8 @@
 			children = (
 				4C1960111A00314F00E1F327 /* Post.h */,
 				4C1960121A00314F00E1F327 /* Post.m */,
+				1241B99C1A0298FF003BD083 /* ProfileImage.h */,
+				1241B99D1A0298FF003BD083 /* ProfileImage.m */,
 				4C1960141A00345000E1F327 /* User.h */,
 				4C1960151A00345000E1F327 /* User.m */,
 				4C07C62C1A0092B2007B7B27 /* UserFollows.h */,
@@ -350,6 +355,7 @@
 				124139C719FEFC1900E26B60 /* ProfileViewController.m in Sources */,
 				4C1960131A00314F00E1F327 /* Post.m in Sources */,
 				16D236DF1A005D48009FC916 /* NewsfeedViewController.m in Sources */,
+				1241B99E1A0298FF003BD083 /* ProfileImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
