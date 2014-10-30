@@ -9,5 +9,9 @@
 #import "NewsfeedCollectionViewCell.h"
 
 @implementation NewsfeedCollectionViewCell
+- (IBAction)likeButtonTapped:(id)sender
+{
+
+}
 
 @end

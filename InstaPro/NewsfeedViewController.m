@@ -3,7 +3,7 @@
 //  InstaPro
 //
 //  Created by Wade Sellers on 10/28/14.
-//  Copyright (c) 2014 Ryan Siska. All rights reserved.
+//  Copyright (c) 2014 RSizzle, BWizzle & Wa-Dizzle. All rights reserved. We'll F*&^ing kill you if you copy this!
 //
 
 #import "NewsfeedViewController.h"
@@ -28,11 +28,6 @@
 
     NSLog(@"Current User %@", [PFUser currentUser]);
 
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [self refreshNewsfeedWithPostPhotos];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -83,8 +78,12 @@
                 [self.NewsfeedCollectionView reloadData];
             }
     }];
+    }
+}
 
-    }
-    }
+-(IBAction)unwindFromAddPost:(UIStoryboardSegue *)sender
+{
+    [self.NewsfeedCollectionView reloadData];
+}
 
 @end
